@@ -1,0 +1,142 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/controllers/api/v1/forecast_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/services/geocode_service.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/models/forecast.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/services/dark_sky_service.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/serializers/geocode_serializer.rb": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/scottthomas/turing/3module/projects/sweater-weather/app/controllers/welcome_controller.rb": [
+        0,
+        0,
+        0,
+        null,
+        0
+      ]
+    },
+    "timestamp": 1555202543
+  }
+}
