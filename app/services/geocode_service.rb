@@ -1,18 +1,14 @@
 class GeocodeService
 
-  def initialize(location)
-    @location = location
+  def get_geocode(city_and_state)
+    results = get_json("?address=#{city_and_state}")
+    get_lat_long(results)
   end
 
-  def get_geocode
-    results = get_json("?address=#{@location}")
-    get_info(results)
-  end
-
-  def get_info(data)
+  def get_lat_long(data)
     {
       city: data[:address_components][0][:long_name],
-      state: data[:address_components][2][:long_name],
+      state: data[:address_components][2][:short_name],
       country: data[:address_components][3][:long_name],
       lat: data[:geometry][:location][:lat],
       lng: data[:geometry][:location][:lng]

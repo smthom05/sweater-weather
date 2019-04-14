@@ -1,6 +1,7 @@
 class DarkSkyService
   attr_reader :lat,
               :lng
+
   def initialize(lat, lng)
     @lat = lat
     @lng = lng
@@ -14,7 +15,7 @@ class DarkSkyService
   private
 
   def conn
-    Faraday.get("https://api.darksky.net/forecast/#{ENV['DARK_SKY_KEY']}/#{lat},#{lng}") do |faraday|
+    Faraday.get("https://api.darksky.net/forecast/#{ENV['DARK_SKY_KEY']}/#{@lat},#{@lng}?exclude=minutely,alerts,flags") do |faraday|
       faraday.headers['Content-Type'] = 'application/json'
       faraday.headers['Accept'] = 'application/json'
     end
