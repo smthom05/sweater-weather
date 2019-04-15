@@ -2,18 +2,26 @@ require 'rails_helper'
 
 
 describe Antipode do
-  describe 'instance methods' do
-    before :each do
-      @location = 'hongkong'
-      @antipode = Antipode.new(@location)
-    end
+  before :each do
+    @location = 'hongkong'
+  end
+  it 'exists' do
+    antipode = Antipode.new(@location)
 
-    it '#get_antipode' do
-      antipode_data = @antipode.get_antipode
-  
-      expect(antipode_data[:lat]).to eq(-22.2901385)
-      expect(antipode_data[:lng]).to eq(-65.5707852)
-      expect(antipode_data[:location_name]).to eq("Yavi Department, Jujuy, Argentina")
+    expect(antipode).to be_a(Antipode)
+  end
+
+  describe 'instance methods' do
+    describe '#get_antipode' do
+      it 'returns the weather and city data for the antipode' do
+        antipode = Antipode.new(@location)
+        
+        expect(antipode.city_data[:lat]).to eq(-22.2901385)
+        expect(antipode.city_data[:lng]).to eq(-65.5707852)
+        expect(antipode.location_name).to eq("Yavi Department, Jujuy, Argentina")
+        expect(antipode.search_location).to eq("Hong Kong")
+
+      end
     end
 
   end

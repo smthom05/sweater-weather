@@ -2,7 +2,8 @@ class Antipode
   attr_reader :id,
               :location_name,
               :forecast,
-              :search_location
+              :search_location,
+              :city_data
 
   def initialize(location)
     get_geocode_lat_lng(location)
@@ -12,17 +13,18 @@ class Antipode
 
   def get_geocode_lat_lng(location)
     coordinates = geocode_service.get_geocode(location)
-    @lat = coordinates[:lat]
-    @lng = coordinates[:lng]
+    @search_lat = coordinates[:lat]
+    @search_lng = coordinates[:lng]
     @search_location = coordinates[:city]
 
   end
 
   def get_antipode
-    antipode = amypode_service.find_antipode(@lat, @lng)
+    antipode = amypode_service.find_antipode(@search_lat, @search_lng)
+
     @city_data = get_antipode_city_data(antipode[:attributes][:lat], antipode[:attributes][:long])
     weather_data = dark_sky_service.get_forecast
-    @locaton_name = @city_data[:location_name]
+    @location_name = @city_data[:location_name]
     @forecast = {
       summary: weather_data[:currently][:summary],
       current_temperature: weather_data[:currently][:temperature]
