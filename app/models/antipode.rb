@@ -19,14 +19,16 @@ class Antipode
   end
 
   def get_antipode
-    antipode = amypode_service.find_antipode(@search_lat, @search_lng)
-
-    @city_data = get_antipode_city_data(antipode[:attributes][:lat], antipode[:attributes][:long])
-    weather_data = dark_sky_service.get_forecast
+    @antipode ||= amypode_service.find_antipode(@search_lat, @search_lng)
+    @city_data = get_antipode_city_data(@antipode[:attributes][:lat], @antipode[:attributes][:long])
     @location_name = @city_data[:location_name]
+  end
+
+  def forecast
+    @weather_data ||= dark_sky_service.get_forecast
     @forecast = {
-      summary: weather_data[:currently][:summary],
-      current_temperature: weather_data[:currently][:temperature]
+      summary: @weather_data[:currently][:summary],
+      current_temperature: @weather_data[:currently][:temperature]
     }
   end
 
