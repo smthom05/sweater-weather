@@ -8,8 +8,8 @@ class GeocodeService
   def get_lat_long(data)
     {
       city: data[:address_components][0][:long_name],
-      state: data[:address_components][2][:short_name],
-      country: data[:address_components][3][:long_name],
+      # state: data[:address_components][:short_name],
+      # country: data[:address_components][3][:long_name],
       lat: data[:geometry][:location][:lat],
       lng: data[:geometry][:location][:lng]
     }
