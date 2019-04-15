@@ -8,7 +8,8 @@ class Forecast
               :lng,
               :currently,
               :hourly,
-              :daily
+              :daily,
+              :forecast
 
   def initialize(city_state)
     @id = 1
@@ -24,11 +25,11 @@ class Forecast
   end
 
   def request_forecast
-    dark_sky_service.get_forecast
+    @forecast ||= dark_sky_service.get_forecast
   end
 
   def request_geocode
-    geocode_service.get_geocode(@city_and_state)
+    @geocode ||= geocode_service.get_geocode(@city_and_state)
   end
 
   private
