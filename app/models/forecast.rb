@@ -10,9 +10,9 @@ class Forecast
               :hourly,
               :daily
 
-  def initialize(location_info)
+  def initialize(city_state)
     @id = 1
-    @city_and_state = location_info
+    @city_and_state = city_state
     @lat = request_geocode[:lat]
     @lng = request_geocode[:lng]
     @city = request_geocode[:city]
