@@ -1,7 +1,7 @@
 class Antipode
 
   def initialize(location)
-    @lat_lng = get_geocode_lat_lng(location)
+    get_geocode_lat_lng(location)
   end
 
   def get_geocode_lat_lng(location)
@@ -10,8 +10,16 @@ class Antipode
     @lng = coordinates[:lng]
   end
 
+  def get_antipode
+    amypode_service.find_antipode(@lat, @lng)
+  end
+
 
   private
+
+  def amypode_service
+    AmypodeService.new
+  end
 
   def geocode_service
     GeocodeService.new

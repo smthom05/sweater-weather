@@ -6,6 +6,5 @@ describe 'Antipode Service' do
     get '/api/v1/antipode?location=hongkong'
 
     expect(response).to be_successful
-
   end
 end
