@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-15T09:54:48-06:00">2019-04-15T09:54:48-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-15T10:00:55-06:00">2019-04-15T10:00:55-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">5.3%</span></span>
+    (<span class="covered_percent"><span class="red">4.17%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.05
+         0.04
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>12</b> files in total.
-    <b>151</b> relevant lines. 
-    <span class="green"><b>8</b> lines covered</span> and
-    <span class="red"><b>143</b> lines missed </span>
+    <b>144</b> relevant lines. 
+    <span class="green"><b>6</b> lines covered</span> and
+    <span class="red"><b>138</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -142,12 +142,12 @@
       
       <tr>
         <td class="strong"><a href="#fe94ca454f6cbec1855c8875eb0c8c5410793128" class="src_link" title="app/services/amypode_service.rb">app/services/amypode_service.rb</a></td>
-        <td class="red strong">61.54 %</td>
+        <td class="green strong">100.0 %</td>
         <td>28</td>
-        <td>13</td>
-        <td>8</td>
-        <td>5</td>
-        <td>0.6</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -481,20 +481,20 @@
           <div class="file_list_container" id="Ungrouped">
   <h2>
     <span class="group_name">Ungrouped</span>
-    (<span class="covered_percent"><span class="red">11.94%</span></span>
+    (<span class="covered_percent"><span class="red">10.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.12
+         0.1
        </span>
     </span> hits/line)
   </h2>
   <a name="Ungrouped"></a>
   <div>
     <b>4</b> files in total.
-    <b>67</b> relevant lines. 
-    <span class="green"><b>8</b> lines covered</span> and
-    <span class="red"><b>59</b> lines missed </span>
+    <b>60</b> relevant lines. 
+    <span class="green"><b>6</b> lines covered</span> and
+    <span class="red"><b>54</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -522,12 +522,12 @@
       
       <tr>
         <td class="strong"><a href="#fe94ca454f6cbec1855c8875eb0c8c5410793128" class="src_link" title="app/services/amypode_service.rb">app/services/amypode_service.rb</a></td>
-        <td class="red strong">61.54 %</td>
+        <td class="green strong">100.0 %</td>
         <td>28</td>
-        <td>13</td>
-        <td>8</td>
-        <td>5</td>
-        <td>0.6</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -1441,11 +1441,11 @@
         <div class="source_table" id="fe94ca454f6cbec1855c8875eb0c8c5410793128">
   <div class="header">
     <h3>app/services/amypode_service.rb</h3>
-    <h4><span class="red">61.54 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>13</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -1491,7 +1491,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    binding.pry</code>
+          <code class="ruby">    JSON.parse(response.body, symbolize_names: true)[:data]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -1530,88 +1530,88 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">  def conn</code>
+          
+          <code class="ruby">  # def conn</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">    x= Faraday.get(&#39;http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&amp;long=114.1693611&#39;) do |faraday|</code>
+          <code class="ruby">  #   x= Faraday.get(&#39;http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&amp;long=114.1693611&#39;) do |faraday|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">      # faraday.adapter Faraday.default_adapter</code>
+          <code class="ruby">  #     # faraday.adapter Faraday.default_adapter</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">      # faraday.headers[&#39;Content-Type&#39;] = &#39;application/json&#39;</code>
+          <code class="ruby">  #     # faraday.headers[&#39;Content-Type&#39;] = &#39;application/json&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">      # faraday.headers[&#39;Accept&#39;] = &#39;application/json&#39;</code>
+          <code class="ruby">  #     # faraday.headers[&#39;Accept&#39;] = &#39;application/json&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">      faraday.headers[&#39;api_key&#39;] = ENV[&#39;AMYPODE_API_KEY&#39;]</code>
+          <code class="ruby">  #     faraday.headers[&#39;api_key&#39;] = ENV[&#39;AMYPODE_API_KEY&#39;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  #   end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">    binding.pry</code>
+          <code class="ruby">  #   binding.pry</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="24">
           
-          <code class="ruby">  def get_json(url)</code>
+          
+          <code class="ruby">  # def get_json(url)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">    response = conn.get(url)</code>
+          <code class="ruby">  #   response = conn.get(url)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">    JSON.parse(response.body, symbolize_names: true)</code>
+          <code class="ruby">  #   JSON.parse(response.body, symbolize_names: true)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">

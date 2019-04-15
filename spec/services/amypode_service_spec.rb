@@ -12,8 +12,9 @@ describe 'Amypode API' do
     amypode = AmypodeService.new
 
     geocode = amypode.find_antipode(lat, lng)
-    binding.pry
-    expect(geocode[:lat]).to eq(22.3193039)
-    expect(geocode[:lng]).to eq(114.1693611)
+
+    expect(geocode[:type]).to eq('antipode')
+    expect(geocode[:attributes][:lat]).to eq(-22.3193039)
+    expect(geocode[:attributes][:long]).to eq(-65.8306389)
   end
 end
