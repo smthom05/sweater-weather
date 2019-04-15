@@ -15,6 +15,15 @@ class GeocodeService
     }
   end
 
+  def reverse_geocode(lat, lng)
+    results = get_json("?latlng=#{lat},#{lng}")
+    reverse_geocode_info = {
+      location_name: results[:formatted_address],
+      lat: results[:geometry][:location][:lat],
+      lng: results[:geometry][:location][:lng]
+    }
+  end
+
   private
 
   def conn

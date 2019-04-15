@@ -11,9 +11,13 @@ class Antipode
   end
 
   def get_antipode
-    amypode_service.find_antipode(@lat, @lng)
+    antipode = amypode_service.find_antipode(@lat, @lng)
+    get_antipode_city_data(antipode[:attributes][:lat], antipode[:attributes][:long])
   end
 
+  def get_antipode_city_data(lat, lng)
+    geocode_service.reverse_geocode(lat, lng)
+  end
 
   private
 
