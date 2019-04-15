@@ -10,16 +10,10 @@ describe Antipode do
 
     it '#get_antipode' do
       antipode_data = @antipode.get_antipode
-
-      expect(antipode_data[attributes][:lat]).to eq(-22.3193039)
-      expect(antipode_data[attributes][:long]).to eq(-65.8306389)
-    end
-
-    it '#get_antipode_city_data' do
-      antipode_data = @antipode.get_antipode[:attributes]
-      results = get_antipode_city_data(antipode_data[:lat], antipode_data[:long])
-binding.pry
-      expect(results[:location_name]).to eq("Yavi Department, Jujuy, Argentina")
+  
+      expect(antipode_data[:lat]).to eq(-22.2901385)
+      expect(antipode_data[:lng]).to eq(-65.5707852)
+      expect(antipode_data[:location_name]).to eq("Yavi Department, Jujuy, Argentina")
     end
 
   end
