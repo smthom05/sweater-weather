@@ -6,9 +6,9 @@ class Antipode
               :city_data
 
   def initialize(location)
+    @id = 1
     get_geocode_lat_lng(location)
     get_antipode
-    @id = 1
   end
 
   def get_geocode_lat_lng(location)
@@ -16,7 +16,6 @@ class Antipode
     @search_lat = coordinates[:lat]
     @search_lng = coordinates[:lng]
     @search_location = coordinates[:city]
-
   end
 
   def get_antipode
