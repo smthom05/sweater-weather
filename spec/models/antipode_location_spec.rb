@@ -18,7 +18,7 @@ describe AntipodeLocation do
 
         expect(antipode_location.city_data[:lat]).to eq(-22.2901385)
         expect(antipode_location.city_data[:lng]).to eq(-65.5707852)
-        expect(antipode_location.location_name).to eq("Jujuy")
+        expect(antipode_location.city_data[:location_name]).to eq("Jujuy")
         expect(antipode_location.search_name).to eq("Hong Kong")
 
       end

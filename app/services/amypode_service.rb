@@ -1,7 +1,7 @@
 class AmypodeService
 
   def find_antipode(lat, lng)
-    response = get_json("antipodes?lat=#{lat}&long=#{lng}")[:data]
+    response = get_json("antipodes?lat=#{lat}&long=#{lng}")[:data][:attributes]
   end
 
   private

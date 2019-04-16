@@ -7,11 +7,11 @@ class Antipode
 
   def initialize(location)
     @id = 1
-    @antipode_location ||= get_antipode_location(location)
-    @forecast ||= get_forecast
+    @antipode_location = get_antipode_location_data(location)
+    @forecast = get_forecast
   end
 
-  def get_antipode_location(location)
+  def get_antipode_location_data(location)
     AntipodeLocation.new(location)
   end
 
@@ -20,7 +20,7 @@ class Antipode
   end
 
   def location_name
-    @antipode_location.location_name
+    @antipode_location.city_data[:location_name]
   end
 
   def search_location
