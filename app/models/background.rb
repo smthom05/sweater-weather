@@ -1,10 +1,13 @@
 class Background
 
-  def initialize(location)
-    @location = location
+  def initialize(city_state)
+    @city_state = city_state
   end
 
-  
+  def get_lat_long
+    geocode_service.get_geocode(@city_state)
+  end
+
 
 
 
