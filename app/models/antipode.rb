@@ -9,6 +9,7 @@ class Antipode
     @id = 1
     get_geocode_lat_lng(location)
     get_antipode
+    @forecast = get_forecast.get_weather
   end
 
   def get_geocode_lat_lng(location)
@@ -24,12 +25,8 @@ class Antipode
     @location_name = @city_data[:location_name]
   end
 
-  def forecast
-    @weather_data ||= dark_sky_service.get_forecast
-    @forecast = {
-      summary: @weather_data[:currently][:summary],
-      current_temperature: @weather_data[:currently][:temperature]
-    }
+  def get_forecast
+    AntipodeWeather.new(@city_data[:lat], @city_data[:lng])
   end
 
   private
@@ -45,9 +42,4 @@ class Antipode
   def geocode_service
     GeocodeService.new
   end
-
-  def dark_sky_service
-    DarkSkyService.new(@city_data[:lat],@city_data[:lng])
-  end
-
 end
