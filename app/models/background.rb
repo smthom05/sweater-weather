@@ -1,20 +1,19 @@
 class Background
+  attr_reader :id,
+              :location_data,
+              :photo_url,
+              :photo_hash
 
   def initialize(city_state)
-    @city_state = city_state
+    @id = 1
+    @location_data = geocode_service.get_geocode(city_state)
+    @photo_url ||= flickr_service.get_photo
   end
-
-  def get_lat_long
-    geocode_service.get_geocode(@city_state)
-  end
-
-
-
 
   private
 
   def flickr_service
-    FlickrService.new
+    FlickrService.new(@location_data)
   end
 
   def geocode_service
