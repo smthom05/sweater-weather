@@ -5,6 +5,7 @@ describe Antipode do
   before :each do
     @location = 'hongkong'
   end
+
   it 'exists' do
     antipode = Antipode.new(@location)
 
@@ -12,19 +13,26 @@ describe Antipode do
   end
 
   describe 'instance methods' do
-    describe '#get_antipode' do
-      it 'returns the weather and city data for the antipode' do
-        antipode = Antipode.new(@location)
+    describe '#get_antipode_location' do
+      xit 'creates a new AntipodeLocation model that holds antipode city data' do
+        results = Antipode.new(@location)
 
-        expect(antipode.city_data[:lat]).to eq(-22.2901385)
-        expect(antipode.city_data[:lng]).to eq(-65.5707852)
-        expect(antipode.location_name).to eq("Jujuy")
-        expect(antipode.search_location).to eq("Hong Kong")
-
+        expect(results.search_lat).to eq(22.3193039)
+        expect(results.search_lng).to eq(114.1693611)
+        expect(results.search_location).to be_a('Hong Kong')
       end
     end
 
-  end
+    describe '#get_forecast' do
+      it 'creates a new AntipodeWeather model that holds forecast' do
+        antipode = Antipode.new(@location)
 
+        results = antipode.get_forecast
+
+        expect(results).to have_key(:summary)
+        expect(results).to have_key(:current_temperature)
+      end
+    end
+  end
 
 end

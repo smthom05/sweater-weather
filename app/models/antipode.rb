@@ -1,45 +1,29 @@
 class Antipode
   attr_reader :id,
-              :location_name,
-              :forecast,
               :search_location,
-              :city_data
+              :forecast,
+              :antipode_location,
+              :location_name
 
   def initialize(location)
     @id = 1
-    get_geocode_lat_lng(location)
-    get_antipode
-    @forecast = get_forecast.get_weather
+    @antipode_location ||= get_antipode_location(location)
+    @forecast ||= get_forecast
   end
 
-  def get_geocode_lat_lng(location)
-    coordinates = geocode_service.get_geocode(location)
-    @search_lat = coordinates[:lat]
-    @search_lng = coordinates[:lng]
-    @search_location = coordinates[:city]
-  end
-
-  def get_antipode
-    @antipode ||= amypode_service.find_antipode(@search_lat, @search_lng)
-    @city_data = get_antipode_city_data(@antipode[:attributes][:lat], @antipode[:attributes][:long])
-    @location_name = @city_data[:location_name]
+  def get_antipode_location(location)
+    AntipodeLocation.new(location)
   end
 
   def get_forecast
-    AntipodeWeather.new(@city_data[:lat], @city_data[:lng])
+    AntipodeWeather.new(@antipode_location.city_data[:lat], @antipode_location.city_data[:lng]).get_weather
   end
 
-  private
-
-  def get_antipode_city_data(lat, lng)
-    geocode_service.reverse_geocode(lat, lng)
+  def location_name
+    @antipode_location.location_name
   end
 
-  def amypode_service
-    AmypodeService.new
-  end
-
-  def geocode_service
-    GeocodeService.new
+  def search_location
+    @antipode_location.search_name
   end
 end
