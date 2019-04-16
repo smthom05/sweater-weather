@@ -14,12 +14,13 @@ describe Antipode do
 
   describe 'instance methods' do
     describe '#get_antipode_location' do
-      xit 'creates a new AntipodeLocation model that holds antipode city data' do
+      it 'creates a new AntipodeLocation model that holds antipode city data' do
         results = Antipode.new(@location)
 
-        expect(results.search_lat).to eq(22.3193039)
-        expect(results.search_lng).to eq(114.1693611)
-        expect(results.search_location).to be_a('Hong Kong')
+        expect(results.antipode_location.city_data[:location_name]).to eq('Jujuy')
+        expect(results.antipode_location.city_data[:lat]).to eq(-22.2901385)
+        expect(results.antipode_location.city_data[:lng]).to eq(-65.5707852)
+        expect(results.antipode_location.search_name).to eq('Hong Kong') 
       end
     end
 
