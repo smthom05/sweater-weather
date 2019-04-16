@@ -7,7 +7,7 @@ class Background
   def initialize(city_state)
     @id = 1
     @location_data = geocode_service.get_geocode(city_state)
-    @photo_hash ||= flickr_service.get_photo
+    @photo_hash = flickr_service.get_photo
   end
 
   def photo_url

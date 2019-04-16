@@ -15,12 +15,12 @@ describe 'Flickr Service' do
     photo_data = fs.get_photo
 
     expect(photo_data).to be_a(Hash)
-    expect(photo_data).to have_key(:id)
-    expect(photo_data).to have_key(:owner)
-    expect(photo_data).to have_key(:secret)
-    expect(photo_data).to have_key(:server)
-    expect(photo_data).to have_key(:farm)
-    expect(photo_data).to have_key(:title)
+    expect(photo_data).to have_key('id')
+    expect(photo_data).to have_key('owner')
+    expect(photo_data).to have_key('secret')
+    expect(photo_data).to have_key('server')
+    expect(photo_data).to have_key('farm')
+    expect(photo_data).to have_key('title')
   end
 
 end
