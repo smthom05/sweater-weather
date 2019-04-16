@@ -1,14 +1,10 @@
 class AntipodeLocation
   attr_reader :search_name,
               :city_data,
-              :coordinates,
-              :antipode
-
+              :coordinates
 
   def initialize(location)
     get_geocode_lat_lng(location)
-    # get_antipode
-    # get_antipode_city_data
   end
 
   def get_geocode_lat_lng(location)
@@ -19,7 +15,7 @@ class AntipodeLocation
 
   def get_antipode(search_lat, search_lng)
     antipode ||= amypode_service.find_antipode(search_lat, search_lng)
-    @city_data ||= get_antipode_city_data(antipode[:lat], antipode[:long])
+    @city_data = get_antipode_city_data(antipode[:lat], antipode[:long])
   end
 
 
