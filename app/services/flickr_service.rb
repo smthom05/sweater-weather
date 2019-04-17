@@ -22,7 +22,7 @@ class FlickrService
       f.params[:safe_search] = 1
       f.params[:content_type] = 1
       f.params[:method] = 'flickr.photos.search'
-      f.params[:tag] = 'skyline,capitol'
+      f.params[:tags] = 'skyline,capitol,downtown'
       f.params[:lat] = @lat
       f.params[:lon] = @lng
       f.params[:radius] = 32
