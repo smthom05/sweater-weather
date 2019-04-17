@@ -6,10 +6,14 @@ class City < ApplicationRecord
   validates_presence_of :latitude
   validates_presence_of :longitude
 
-  attr_reader :forecast
+  attr_reader :current_weather
 
-  def forecast
+  def current_weather
     Forecast.new(self[:name]).currently
+  end
+
+  def location
+    self[:name]
   end
 
   def self.create_city(location)
