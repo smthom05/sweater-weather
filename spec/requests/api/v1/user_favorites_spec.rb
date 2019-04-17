@@ -90,12 +90,11 @@ describe 'User Favorites API' do
 
     describe 'I can attempt to delete one my favorite cities' do
       it 'returns a 200 and list of favorited cities without the deleted city' do
-        city_1 = @user.cities.create(name: 'Denver, CO')
-        city_2 = @user.cities.create(name: 'Harrisburg, PA')
-        city_3 = @user.cities.create(name: 'Blacksburg, VA')
+        city_1 = @user.cities.create(name: 'Denver, CO', latitude: 4344, longitude: 490309)
+        city_2 = @user.cities.create(name: 'Harrisburg, PA', latitude: 4344, longitude: 490309)
+        city_3 = @user.cities.create(name: 'Blacksburg, VA', latitude: 4344, longitude: 490309)
 
         expect(@user.cities.count).to eq(3)
-
         body = {
                   "location": "Denver, CO",
                   "api_key": "jgn983hy48thw9begh98h4539h4"
@@ -109,9 +108,9 @@ describe 'User Favorites API' do
       end
 
       it 'returns a 401 if the api key is not present' do
-        city_1 = @user.cities.create(name: 'Denver, CO')
-        city_2 = @user.cities.create(name: 'Harrisburg, PA')
-        city_3 = @user.cities.create(name: 'Blacksburg, VA')
+        city_1 = @user.cities.create(name: 'Denver, CO', latitude: 4344, longitude: 490309)
+        city_2 = @user.cities.create(name: 'Harrisburg, PA', latitude: 4344, longitude: 490309)
+        city_3 = @user.cities.create(name: 'Blacksburg, VA', latitude: 4344, longitude: 490309)
 
         delete '/api/v1/favorites', params: {'location': 'Denver, CO'}
 
@@ -121,9 +120,9 @@ describe 'User Favorites API' do
       end
 
       it 'returns a 401 if the api key is not correct' do
-        city_1 = @user.cities.create(name: 'Denver, CO')
-        city_2 = @user.cities.create(name: 'Harrisburg, PA')
-        city_3 = @user.cities.create(name: 'Blacksburg, VA')
+        city_1 = @user.cities.create(name: 'Denver, CO', latitude: 4344, longitude: 490309)
+        city_2 = @user.cities.create(name: 'Harrisburg, PA', latitude: 4344, longitude: 490309)
+        city_3 = @user.cities.create(name: 'Blacksburg, VA', latitude: 4344, longitude: 490309)
 
         body = {
                   'location': 'Denver, CO',

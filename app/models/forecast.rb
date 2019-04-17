@@ -19,10 +19,11 @@ class Forecast
     @city = request_geocode[:city]
     @state = request_geocode[:state]
     @country = request_geocode[:country]
-    @currently = request_forecast[:currently]
-    @hourly = request_forecast[:hourly]
-    @daily = request_forecast[:daily]
+    @currently = Currently.new(request_forecast[:currently])
+    @hourly = Hourly.new(request_forecast[:hourly][:data])
+    # @daily = Daily.new(@id, request_forecast[:daily][:data])
   end
+
 
   def request_forecast
     @forecast ||= dark_sky_service.get_forecast
