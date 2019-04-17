@@ -17,8 +17,8 @@ describe City do
       it 'creates a new forecast model with the forecast for a location' do
         city = City.create(name: 'denver,co', latitude: 39.7392358, longitude: -104.990251)
 
-        expected = city.forecast
-        
+        expected = city.current_weather
+
         expect(expected.summary).to be_a(String)
         expect(expected.temperature).to be_a(Float)
       end
