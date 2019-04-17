@@ -2,7 +2,7 @@ class Api::V1::FavoritesController < Api::V1::BaseController
 
   def create
     user = User.find_by(api_key: params[:api_key])
-    city = City.find_or_create_by(name: params[:location])
+    city = City.find_by(name: params[:location]) || City.create_city(params[:location])
 
     if user
       user.cities << city

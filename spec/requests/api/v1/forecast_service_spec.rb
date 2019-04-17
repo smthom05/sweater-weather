@@ -7,12 +7,15 @@ describe 'Internal Forecast API' do
     expect(response).to be_successful
 
     forecast_data = JSON.parse(response.body, symbolize_names: true)[:data]
-
+    
     expect(forecast_data[:attributes][:city]).to eq("Denver")
     expect(forecast_data[:attributes][:state]).to eq("CO")
     expect(forecast_data[:attributes][:country]).to eq("United States")
-    expect(forecast_data[:attributes]).to have_key(:currently)
-    expect(forecast_data[:attributes]).to have_key(:hourly)
-    expect(forecast_data[:attributes]).to have_key(:daily)
+    expect(forecast_data[:attributes][:currently]).to have_key(:summary)
+    expect(forecast_data[:attributes][:currently]).to have_key(:precip_prob)
+    expect(forecast_data[:attributes][:currently]).to have_key(:temperature)
+    expect(forecast_data[:attributes][:currently]).to have_key(:humidity)
+    expect(forecast_data[:attributes][:currently]).to have_key(:wind_speed)
+    expect(forecast_data[:attributes][:currently]).to have_key(:visibility)
   end
 end

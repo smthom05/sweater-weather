@@ -5,7 +5,5 @@ class ForecastSerializer
              :city,
              :state,
              :country,
-             :currently,
-             :hourly,
-             :daily
+             :currently
 end

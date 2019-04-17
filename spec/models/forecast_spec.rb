@@ -17,8 +17,8 @@ describe Forecast do
     expect(forecast.city).to eq('Denver')
     expect(forecast.state).to eq('CO')
     expect(forecast.country).to eq('United States')
-    expect(forecast.forecast).to have_key(:currently)
-    expect(forecast.forecast).to have_key(:hourly)
-    expect(forecast.forecast).to have_key(:daily)
+    expect(forecast.currently).to be_a(Currently)
+    expect(forecast.hourly).to be_a(Hourly)
+    # expect(forecast.daily).to be_a(Daily)
   end
 end
