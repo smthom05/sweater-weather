@@ -16,16 +16,18 @@ class FlickrService
 
 
   def conn
-    Faraday.new(url: "https://api.flickr.com/services/rest/") do |f|
-      f.adapter Faraday.default_adapter
-      f.params['api_key'] = ENV['FLICKR_KEY']
-      f.params[:safe_search] = 1
-      f.params[:content_type] = 1
-      f.params[:method] = 'flickr.photos.search'
-      f.params[:tags] = 'skyline,capitol,downtown'
-      f.params[:lat] = @lat
-      f.params[:lon] = @lng
-      f.params[:radius] = 32
+    Rails.cache.fetch("#{@lat},#{@lng}/#{Time.now.month}/photo", expires_in: 1.month) do
+      Faraday.new(url: "https://api.flickr.com/services/rest/") do |f|
+        f.adapter Faraday.default_adapter
+        f.params['api_key'] = ENV['FLICKR_KEY']
+        f.params[:safe_search] = 1
+        f.params[:content_type] = 1
+        f.params[:method] = 'flickr.photos.search'
+        f.params[:tags] = 'skyline,capitol,downtown'
+        f.params[:lat] = @lat
+        f.params[:lon] = @lng
+        f.params[:radius] = 32
+      end
     end
   end
 end
