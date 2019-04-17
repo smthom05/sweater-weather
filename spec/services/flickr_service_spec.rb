@@ -2,14 +2,14 @@ require 'rails_helper'
 
 describe 'Flickr Service' do
   it 'exists' do
-    location_data = {lat: 39.7392, lng:104.9903}
+    location_data = {lat: 39.7392, lng: -104.9903}
     fs = FlickrService.new(location_data)
 
     expect(fs).to be_a(FlickrService)
   end
 
   it 'returns an image' do
-    location_data = {lat: 39.7392, lng:104.9903}
+    location_data = {lat: 39.7392, lng: -104.9903}
     fs = FlickrService.new(location_data)
 
     photo_data = fs.get_photo

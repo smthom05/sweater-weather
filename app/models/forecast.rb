@@ -21,7 +21,7 @@ class Forecast
     @country = request_geocode[:country]
     @currently = Currently.new(request_forecast[:currently])
     @hourly = Hourly.new(request_forecast[:hourly][:data])
-    # @daily = Daily.new(@id, request_forecast[:daily][:data])
+    # @daily = Daily.new(request_forecast[:daily][:data])
   end
 
 
